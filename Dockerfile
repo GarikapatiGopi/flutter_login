@@ -1,21 +1,20 @@
-# Use the official Flutter base image
-FROM ghcr.io/cirruslabs/flutter:latest
+# Use Flutter base image
+FROM cirrusci/flutter:latest
 
-# Set the working directory inside the container
+# Set working directory
 WORKDIR /app
 
-# Copy the entire Flutter project into the container
+# Copy project files
 COPY . .
 
-# Enable Flutter web support (optional)
+# Enable Flutter web
 RUN flutter config --enable-web
 
-# Get dependencies
+# Install dependencies
 RUN flutter pub get
 
-# Build the Flutter application for APK
+# Build the APK
 RUN flutter build apk
 
-# Expose the port for web apps (optional)
-EXPOSE 8080
-
+# Set default command
+CMD ["flutter", "run"]
