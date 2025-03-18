@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'Edituserpage.dart'; // Import the Edit Page
+import 'EditUserpage.dart'; // Import the Edit Page
 
 class UserDetailsPage extends StatefulWidget {
   final Map<String, dynamic> userData;
